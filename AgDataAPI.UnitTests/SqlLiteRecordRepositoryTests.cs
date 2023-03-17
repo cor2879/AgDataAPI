@@ -64,7 +64,6 @@ namespace AgDataAPI.UnitTests
         {
             await ClearDataAsync();
 
-            // Arrange
             var expectedRecords = new List<Record>
             {
                 new Record { Id = 1, Name = "John Doe", Address = "123 Main St" },
@@ -72,10 +71,8 @@ namespace AgDataAPI.UnitTests
                 new Record { Id = 3, Name = "Bob Johnson", Address = "789 Maple Ave" }
             };
 
-            // Act
             var actualRecords = (await _repository.GetAllAsync()).ToList();
 
-            // Assert
             for (var i = 0; i < actualRecords.Count; i++)
             {
                 Assert.AreEqual(expectedRecords[i].Id, actualRecords[i].Id);
@@ -89,14 +86,11 @@ namespace AgDataAPI.UnitTests
         {
             await ClearDataAsync();
 
-            // Arrange
             var newRecord = new Record { Name = "New Person", Address = "999 New St" };
 
-            // Act
             await _repository.AddAsync(newRecord);
             var actualRecord = await _repository.GetAsync(newRecord.Name);
 
-            // Assert
             Assert.AreEqual(newRecord.Name, actualRecord.Name);
             Assert.AreEqual(newRecord.Address, actualRecord.Address);
         }
@@ -107,12 +101,10 @@ namespace AgDataAPI.UnitTests
             await ClearDataAsync();
             await SeedDataAsync();
 
-            // Arrange
             var existingRecord = new Record { Id = 1, Name = "Jane Smith", Address = "999 New St" };
 
             try
             {
-                // Act
                 await _repository.AddAsync(existingRecord);
 
                 Assert.IsTrue(false, "Exception was not thrown");
@@ -129,14 +121,11 @@ namespace AgDataAPI.UnitTests
             await ClearDataAsync();
             await SeedDataAsync();
 
-            // Arrange
             var updatedRecord = new Record { Id = 2, Name = "Updated Person", Address = "888 Updated St" };
 
-            // Act
             await _repository.UpdateAsync(updatedRecord);
             var actualRecord = await _repository.GetAsync(2);
 
-            // Assert
             Assert.AreEqual(updatedRecord.Id, actualRecord.Id);
             Assert.AreEqual(updatedRecord.Name, actualRecord.Name);
             Assert.AreEqual(updatedRecord.Address, actualRecord.Address);
@@ -150,10 +139,8 @@ namespace AgDataAPI.UnitTests
 
             try
             {
-                // Arrange
                 var nonExistentRecord = new Record { Id = 999, Name = "Does Not Exist", Address = "123 Fake St" };
 
-                // Act
                 await _repository.UpdateAsync(nonExistentRecord);
 
                 Assert.IsTrue(false, "Exception was not thrown");
