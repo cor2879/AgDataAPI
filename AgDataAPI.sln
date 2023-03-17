@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgDataAPI", "AgDataAPI\AgDataAPI.csproj", "{D347B329-93F8-44D0-A4C3-25F28E573CF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgDataAPI.UnitTests", "AgDataAPI.UnitTests\AgDataAPI.UnitTests.csproj", "{B06D279B-32CC-4F4F-9D4E-CDEB4AB76900}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D347B329-93F8-44D0-A4C3-25F28E573CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D347B329-93F8-44D0-A4C3-25F28E573CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D347B329-93F8-44D0-A4C3-25F28E573CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D347B329-93F8-44D0-A4C3-25F28E573CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B06D279B-32CC-4F4F-9D4E-CDEB4AB76900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06D279B-32CC-4F4F-9D4E-CDEB4AB76900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06D279B-32CC-4F4F-9D4E-CDEB4AB76900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06D279B-32CC-4F4F-9D4E-CDEB4AB76900}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEA1E3AB-0A28-4A8E-9493-56023021CAB0}
+	EndGlobalSection
+EndGlobal
