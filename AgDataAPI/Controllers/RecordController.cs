@@ -22,13 +22,11 @@ namespace AgDataAPI.Controllers
                 return BadRequest("A null or blank name is invalid.");
             }
 
-            // Check if the record name already exists
             if (await _recordRepository.ExistsAsync(record.Name))
             {
                 return BadRequest("A record with this name already exists.");
             }
 
-            // Add the new record to the database
             await _recordRepository.AddAsync(record);
 
             return Ok();
@@ -61,13 +59,11 @@ namespace AgDataAPI.Controllers
         [HttpPut("{name}")]
         public async Task<IActionResult> UpdateRecordAsync([FromBody] Record record)
         {
-            // Check if the record to update exists
             if (!await _recordRepository.ExistsAsync(record.Name))
             {
                 return NotFound();
             }
 
-            // Update the record in the database
             return await _recordRepository.UpdateAsync(record) ? Ok() : BadRequest();
         }
 
@@ -75,13 +71,11 @@ namespace AgDataAPI.Controllers
         [HttpDelete("{name}")]
         public async Task<IActionResult> DeleteRecordAsync(string name)
         {
-            // Check if the record to delete exists
             if (!await _recordRepository.ExistsAsync(name))
             {
                 return NotFound();
             }
 
-            // Delete the record from the database
            return await _recordRepository.DeleteAsync(name) ? Ok() : BadRequest();
         }
     }
